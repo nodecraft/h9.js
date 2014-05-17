@@ -24,7 +24,7 @@ Each callback returns data with the following practices:
 Code Examples
 -------------
 ```javascript
-   var h9 = require('h9');
+   var h9 = require('h9')('API-KEY-GOES-HERE');
    
    // list all active accounts 
    h9.getAccounts({status:1},function(err, results){
