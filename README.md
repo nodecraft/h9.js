@@ -81,33 +81,40 @@ Code Examples
             console.error('Failed to fix communications with error: '+results.result);
         }
    });
+```
 
 Methods
--------
+------------
 
 ### My Account Functions ###
 
 ```javascript
     h9.viewMyAccount(callback)
+```
+
 `callback` with success and data object
 
 ```javascript    
     h9.getMessages(data,callback)
+```
 `data` (optional) Object `{page:1,perPage:50}`
 `callback` with success and messages object
 
 ```javascript    
     h9.getMessages(messageId,callback)
+```
 `messageId` unique message ID
 `callback` with success and data object
 
 ```javascript
     h9.getNewsPosts(limit,callback)
+```
 `limit` (optional) limit number of posts
 `callback` with success and posts object
 
 ```javascript
     h9.viewNewsPost(postID,callback)
+```
 `postID` unique news post ID
 `callback` with success and data object
 
@@ -115,15 +122,18 @@ Methods
 
 ```javascript
     h9.getAccounts(filters,callback)
+```
 `filters` optional filters `{search: 'Search Terms', status: 1, pack_id: 1234}`
 `callback` with success, result, meta, total_accoutns, and accounts objects
 
 ```javascript
     h9.createAccount(data,callback)
+```
 `data` as an object containing `domain`, `username`, `password`, `location`, `pack` and optionally `contact` and `skeleton` 
 `callback` with success, result, meta, total_accoutns, and accounts objects
 
 ```javascript
     h9.viewAccount(domain,callback)
+```
 `domain` string or ID of domain to view
 `callback` with success, result, and data
