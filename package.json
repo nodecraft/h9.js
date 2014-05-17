@@ -2,7 +2,7 @@
 	"name":"h9",
 	"description": "node.js wrapper for Hostnine Reseller API",
 	"author": "NodeCraft Hosting LLC <admin@getnodecraft.net> (http://getnodecraft.net)",
-	"version":"1.0.1",
+	"version":"1.0.2",
 	"main": "h9.js",
 	"repository": {
 	  "type": "git",

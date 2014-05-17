@@ -34,6 +34,9 @@ module.exports = function(apiKey){
 							if(body.result){
 								body.result = body.result.replace(/<[^>]*>?/gm, ' ').replace(/ +(?= )/g,'').trim();
 							}
+							if(body.success){
+								body.success = helpers.parseBoolean(body.success);
+							}
 							// There is no better way to detect these issues
 							switch(body.result){
 								case "Invalid Reseller Central API Module selected.":
@@ -86,6 +89,17 @@ module.exports = function(apiKey){
 					}
 				}
 				return out;
+			},
+			parseBoolean: function(string){
+				switch(string.toLowerCase()){
+					case "true":
+						return true;
+					case "false":
+					case null:
+						return false;
+					default:
+						return Boolean(string);
+				}
 			},
 			isNumeric: function(check){
 				return !isNaN(parseInt(check));
