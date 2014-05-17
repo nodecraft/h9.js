@@ -1,6 +1,9 @@
 h9.js
 =====
 
+    npm install syszip
+
+
 h9.js - Node.js Wrapper for the [HostNine API](https://cp.hostnine.com/api/docs/)
 
 This wrapper attemps to normalize the HostNine API that is provided to Resellers. The following coding practices are employed to make this API as flexible as possible.
