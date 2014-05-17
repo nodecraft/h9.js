@@ -1,21 +1,21 @@
 h9.js
 =====
 
-    npm install syszip
+    npm install h9
 
 
 h9.js - Node.js Wrapper for the [HostNine API](https://cp.hostnine.com/api/docs/)
 
 This wrapper attemps to normalize the HostNine API that is provided to Resellers. The following coding practices are employed to make this API as flexible as possible.
 
- * Any domains looksups may use the domain ID or the domain name
+ * Any domains lookups may use the domain ID OR the domain name
  * Any package lookups may use the package id OR package name. Any time the package is referenced in an object you may directly reference the ID with `package_id`, the package name with `package` or automatically lookup the package with `pack`
- * Most location lookups may use the location ID or location name. The only exception is for `createAccount` method.
+ * Most location lookups may use the location ID OR location name. The only exception is for `createAccount` method.
 
 Each callback returns data with the following practices:
 
  * The `success` attribute is always persistant on all requests
- * The `result` attribute is persistant on most requests. This is passed through based on the APi results
+ * The `result` attribute is persistant on most requests. This is passed through based on the API results
  * Any singular data points are assigned to the `data` attribute
  * Any listed array based data will be listed based on the method used. For example getAccounts will return `accounts`.
  * All errors return a `message` attrible useful for user friendly errors.
@@ -39,7 +39,7 @@ Code Examples
        }
    });
    
-   // create new account, (note this normally takes several seconds to complete) https://cp.hostnine.com/api/docs/accounts.html#createAccount
+   // create new account (note this normally takes several seconds to complete) https://cp.hostnine.com/api/docs/accounts.html#createAccount
    h9.createAccount({
        domain: 'exampledomain.com',
        username: 'username',
@@ -89,7 +89,7 @@ Code Examples
 My Account Functions
 --------------------
 
-If you need documentation on what the methods or data points are I would recommend matching the methods here with the [API Docs](https://cp.hostnine.com/api/docs/)
+If you need documentation on what the methods or data points are, I would recommend matching the methods here with the [API Docs](https://cp.hostnine.com/api/docs/)
 
 
 ### h9.viewMyAccount(callback) ###
