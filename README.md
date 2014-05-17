@@ -86,57 +86,236 @@ Code Examples
    });
 ```
 
-Methods
-------------
+My Account Functions
+--------------------
 
-### My Account Functions ###
+If you need documentation on what the methods or data points are I would recommend matching the methods here with the [API Docs](https://cp.hostnine.com/api/docs/)
 
-```javascript
-    h9.viewMyAccount(callback)
-```
 
-`callback` with success and data object
+### h9.viewMyAccount(callback) ###
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `messages`
 
-```javascript    
-    h9.getMessages(data,callback)
-```
-`data` (optional) Object `{page:1,perPage:50}`
-`callback` with success and messages object
+### h9.getMessages(data, callback) ###
+* `data` - *(optional) Object*
+    * `page` - *(optional) Integer of current page*
+    * `perPage` - *(optional) Integer of number results per page*
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `results`
+        * `messages`
 
-```javascript    
-    h9.getMessages(messageId,callback)
-```
-`messageId` unique message ID
-`callback` with success and data object
+### h9.viewMessage(messageId, callback) ###
+* `messageId` - *Integer*
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `results`
+        * `data`
 
-```javascript
-    h9.getNewsPosts(limit,callback)
-```
-`limit` (optional) limit number of posts
-`callback` with success and posts object
+### javascript h9.getNewsPosts(limit, callback) ###
+* `limit` - *(optional) Integer*
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `results`
+        * `posts`
 
-```javascript
-    h9.viewNewsPost(postID,callback)
-```
-`postID` unique news post ID
-`callback` with success and data object
+### h9.viewNewsPost(postID, callback) ###
+* `postID`  - *Integer*
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `results`
+        * `data`
 
-### Accounts Functions ###
 
-```javascript
-    h9.getAccounts(filters,callback)
-```
-`filters` optional filters `{search: 'Search Terms', status: 1, pack_id: 1234}`
-`callback` with success, result, meta, total_accoutns, and accounts objects
+Accounts Functions
+--------------------
 
-```javascript
-    h9.createAccount(data,callback)
-```
-`data` as an object containing `domain`, `username`, `password`, `location`, `pack` and optionally `contact` and `skeleton` 
-`callback` with success, result, meta, total_accoutns, and accounts objects
+### h9.getAccounts(filters, callback) ###
+* `filters` - *(optional) Object*
+    * `search` - *(optional) String*
+    * `status` - *(optional) Integer*
+    * `pack_id` - *(optional) Integer*
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `results`
+        * `data`
+        * `meta`
+            * `filters`
+            * `filtersstr`
+            * `sort`
+            * `sortstr`
+        * `accounts`
 
-```javascript
-    h9.viewAccount(domain,callback)
-```
-`domain` string or ID of domain to view
-`callback` with success, result, and data
+### h9.createAccount(data, callback) ###
+* `data` - *Object*
+    * `domain` - *String*
+    * `username - *String*`
+    * `password - *String*`
+    * `location - *String*`
+    * `pack - *String* OR *Integer*`
+    * `contact` - *(optional) String*
+    * `skeleton` - *(optional) String*
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `results`
+
+### h9.viewAccount(domain, callback) ###
+* `domain` - *String* OR *Integer*
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `results`
+        * `data`
+
+### h9.modifyAccount(domain, data, callback) ###
+* `domain` - *String* OR *Integer*
+* `data` - *Object*
+    * `domain` - *(optional) String*
+    * `username - *(optional) String*`
+    * `password - *(optional) String*`
+    * `location - *(optional) String*`
+    * `pack - *(optional) String* OR *Integer*`
+    * `quota - *(optional) Integer*`
+    * `bandwidth - *(optional) Integer*`
+    * `theme - *(optional) String*`
+    * `ns1 - *(optional) String*`
+    * `nss - *(optional) String*`
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `results`
+
+### h9.changeAccountPassword(domain, password, callback) ###
+* `domain` - *String* OR *Integer*
+* `password` - *String*
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `results`
+
+### h9.changeAccountPackage(domain, package, callback) ###
+* `domain` - *String* OR *Integer*
+* `package` - *String* OR *Integer*
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `results`
+
+### h9.suspendAccount(domain, reason, callback) ###
+* `domain` - *String* OR *Integer*
+* `reason` - *String*
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `results`
+
+### h9.unsuspendAccount(domain, callback) ###
+* `domain` - *String* OR *Integer*
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `results`
+
+### h9.terminateAccount(domain, callback) ###
+* `domain` - *String* OR *Integer*
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `results`
+
+Accounts Functions
+--------------------
+
+### h9.getLocations(callback) ###
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `locations`
+
+### h9.getNetworkStatus(callback) ###
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `locations`
+
+Package Function
+--------------------
+
+### h9.getPackages(callback) ###
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `packages`
+
+Migration Functions
+--------------------
+
+### h9.getMigrations(callback) ###
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `migrations`
+
+### h9.addMigration(domain, location, callback) ###
+* `domain` - *String* OR *Integer*
+* `location` - *String* OR *Integer*
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `result`
+
+Screens & Tools Functions
+--------------------
+
+### h9.fixPermissions(domain, callback) ###
+* `domain` - *String* OR *Integer*
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `result`
+
+### h9.checkFirewallBan(ip, domain, callback) ###
+* `ip` - *String*
+* `domain` - *String* OR *Integer*
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `result`
+
+### h9.removeFirewallBan(ip, domain, callback) ###
+* `ip` - *String*
+* `domain` - *String* OR *Integer*
+* `callback` - *Object*
+    * `err` - *Error Object*
+    * `results` - *Object*
+        * `success`
+        * `result`
