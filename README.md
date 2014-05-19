@@ -89,7 +89,7 @@ Code Examples
 Documentation
 --------------------
 
-If you need documentation on what the methods or data points are, I would recommend matching the methods here with the [API Docs](https://cp.hostnine.com/api/docs/). Each page is seperate into functions depending on their grouping.
+If you need documentation on what the methods or data points are, I would recommend matching the methods here with the [API Docs](https://cp.hostnine.com/api/docs/). Each page is separate into functions depending on their grouping.
 
 * [Accounts Functions](https://github.com/nodecraft/h9.js/wiki/Accounts-Functions)
 * [Locations Functions](https://github.com/nodecraft/h9.js/wiki/Locations-Functions)
